@@ -1,0 +1,187 @@
+$success_color: #669801
+$error_color: #CC0101
+$button_color: #4c328b
+$button_hover_color: #8771b1
+$border_color: #CACACA
+$border_color_light: #EFEFEF
+
+body
+    font-family: 'Roboto', sans-serif
+    height: 100vh
+    margin: 0
+    color: #676767
+    padding: 0 calc(20px - (100vw - 100%)) 0 0
+    &.body-app.overflowHidden
+        overflow: auto !important
+.container
+    max-width: 510px
+    width: 100%
+.main
+    min-height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    padding: 15px
+    box-sizing: border-box
+    overflow-y: auto
+.active-logs
+    display: block
+    border: 1px solid $border_color_light
+    padding: 5px 15px 5px 30px
+    margin: 0px 0 0
+    cursor: pointer
+    font-size: 14px
+    font-weight: 600
+    margin-bottom: -1px
+    opacity: 0
+.indexing
+    h2
+        text-align: center
+        margin: 0 0 30px
+    &__container
+        max-width: 510px
+        width: 100%
+        padding: 30px
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, .1)
+        position: relative
+        box-sizing: border-box
+        #overlay-spinner
+            position: absolute
+        .loader-spinner
+            width: 100px
+            height: 100px
+    &__input
+        &--file
+            padding: 0 0 10px
+            input[type='file']
+                display: none
+            &-block
+                display: flex
+                position: relative
+                & > *
+                    margin-bottom: 10px
+            &-text
+                padding: 10px 10px
+                border: 1px solid $border_color_light
+                border-right: none
+                box-sizing: border-box
+                flex-grow: 1
+                font-size: 14px
+                font-weight: 400
+                color: #5a574d91
+            &-btn
+                max-width: 130px
+                flex-grow: 1
+                text-align: center
+                display: inline-block
+                padding: 10px 15px
+                border: 1px solid $button_color
+                background: $button_color
+                color: white
+                cursor: pointer
+                box-sizing: border-box
+                font-size: 14px
+                font-weight: 500
+                transition: all .3s
+                &:hover:not(.browser)
+                    background: $button_hover_color
+                    border: 1px solid $button_hover_color
+    &__label
+        &--text
+            font-size: 14px
+            font-weight: 600
+            margin-bottom: 10px
+            display: block
+            color: #5A574D
+    &__textarea
+        padding: 0 0 10px
+        textarea
+            border: 1px solid $border_color_light
+            box-sizing: border-box
+            resize: none
+            padding: 5px 10px
+            width: 100%
+            height: 200px
+    &__submit
+        padding: 10px 0
+        button
+            width: 100%
+            border: 1px solid $button_color
+            background: $button_color
+            color: white
+            padding: 10px 20px
+            cursor: pointer
+            font-family: 'Roboto', sans-serif
+            font-size: 14px
+            font-weight: 600
+            transition: all .3s
+            &:hover
+                background: $button_hover_color
+                border: 1px solid $button_hover_color
+    &__error
+        position: relative
+        &--text
+            font-size: 11px
+            color: $error_color
+            position: absolute
+            top: -8px
+    &__logs
+        font-size: 10px
+        border: 1px solid $border_color_light
+        background: #f7f7f7
+        padding: 5px
+        height: 300px
+        overflow-y: auto
+        margin-top: 20px
+        &--clear
+            display: block
+            color: #4c328b
+            cursor: pointer
+            font-size: 12px
+            font-weight: 600
+            text-align: right
+            margin-top: 5px
+        ul
+            list-style: none
+            padding: 0
+            margin: 0
+        ul.indexing__logs--submessages
+            padding-left: 10px
+            margin-top: 2px
+        li
+            margin-bottom: 2px
+        .error
+            color: $error_color
+        .success
+            color: $success_color
+        &--drop-btn
+            display: inline-block
+            width: 7px
+            height: 7px
+            background: url(/assets/img/plus.png) no-repeat center
+            background-size: contain
+            cursor: pointer
+            &.open
+                background: url(/assets/img/minus.png) no-repeat center
+                background-size: contain
+    &__flex
+        display: flex
+        @media (max-width: 360px)
+            flex-direction: column
+    &__tabs
+        font-size: 14px
+        font-weight: 600
+        margin-bottom: 10px
+        padding-left: 30px
+        @media (max-width: 360px)
+            padding-left: 0
+        span
+            display: inline-block
+            color: #4c328b
+            cursor: pointer
+            &.active
+                border-bottom: 1px dashed #4c328b
+        span:not(:last-child)
+            margin-right: 15px
+
